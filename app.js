@@ -41,7 +41,10 @@ app.get('/posts/:postName', (req, res) => {
   posts.forEach((post) => {
     const storedTitle = _.kebabCase(post.title);
     if (requestedTitle === storedTitle) {
-      res.render('post', { postTitle: post.title, postContent: post.content });
+      res.render('post', {
+        postTitle: post.title,
+        postContent: post.content,
+      });
     }
   });
 });
